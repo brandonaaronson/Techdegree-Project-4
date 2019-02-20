@@ -1,0 +1,23 @@
+.img--{
+    &logo {
+        display: block;
+        margin: 0 auto;
+        max-width: 162px;
+        padding-top: 40px;
+    }
+
+    &frame {
+        @include center(100%);
+        display: block;
+        border: 1px solid $color-text-primary;
+        padding: 15px;
+    }
+
+    &avatar {
+        @include center(90%);
+        display:block;
+        max-width: 199px;
+        margin-top: $margin-start;
+        padding: 0;
+    }
+}

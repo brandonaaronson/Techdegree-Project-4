@@ -1,10 +1,56 @@
+
+// Font Face
+
+
+
+
+
+@mixin button {
+    
+}
+
+@mixin center($w){
+    width: $w;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+@mixin grid {
+    @extend %border-radius;
+    border: 1px solid tomato;
+}
+// Flexbox
+
+@mixin flexy(
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+  }  
+
 // Media Queries
 
+@mixin mq($break) {
+    $value: map-get($breakpoints, $break);
+    $lg: map-get($breakpoints, 'lg');
+    @if $value == $lg {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: $value) {
+            @content;
+        }
+    }
+}
 
 
 
 
 
-
-
-// Flexbox

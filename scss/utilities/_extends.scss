@@ -1,0 +1,24 @@
+%border-radius {
+    border-radius: $br;
+}
+
+%button {
+    @extend %border-radius;
+    display: block;
+    border: none;
+    text-transform: uppercase;
+    width: 90%;
+    height: 40px;
+    color: #fff;
+    margin: 10px auto 0;
+    }
+
+%grid {
+    @extend %border-radius;
+    width: 100%;
+    color: $grid-text-color;
+    margin-top: 10px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}

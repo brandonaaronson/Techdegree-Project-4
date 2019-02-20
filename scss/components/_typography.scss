@@ -1,0 +1,45 @@
+.container {
+    font-family: $stack-open-sans;
+    padding: 0 25px;
+    text-align: left;
+    
+}
+.card{
+    display:block;
+    @include center(90%);
+    margin-bottom: $margin-end;
+    font-size: 1em;
+}
+
+.link {
+    color: color('malibu');
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+}
+
+.blockquote {
+    @include center(90%);
+    font-size: 1.4em;
+    font-style: italic;
+    line-height: 1.4em;
+    border-left: 10px solid color('viking');
+    border-radius: $br;
+    margin-top: $margin-start;
+    padding-left: 15px;
+}
+
+.headline--primary {
+    color: color('viking');
+    padding: 0 0 20px 40px;
+    font-size: 1.4em;
+    width: 80%;
+    line-height: 1.2em;
+    font-weight: $font-weight-bold;
+}
+
+.headline--secondary {
+    text-align: left;
+    font-weight: $font-weight-light;
+    margin: 20px 0 20px 20px;
+}
+

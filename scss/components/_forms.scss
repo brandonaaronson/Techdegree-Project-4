@@ -1,0 +1,18 @@
+.form {
+    @include center(100%);
+
+    &__input {
+        width: 96%;
+        border: none;
+        border-bottom: 6px solid color('viking');
+        padding: 15px;
+        height: 35px;
+        margin-left: 2%;
+        font-size: .8em;
+        font-weight: $font-weight-bold;
+    }
+}
+.form__label--hidden {
+    visibility: hidden;
+}
+

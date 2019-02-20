@@ -1,0 +1,120 @@
+.grid__ {
+
+    &row {
+        @include center(100%);
+       
+    }
+
+// Grid columns
+
+// Calculate grid columns
+
+@for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    //Generate column modifier classes
+
+    .grd__col--#{$i} {
+        
+        width: percentage($target / $context);
+    }
+}
+    
+    &col--2 {
+         
+        
+    }
+
+    &col--3 {
+        
+        
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('3');
+                &:last-child {
+                    margin-bottom: 40px;
+                }
+            }
+}
+
+    &col--4 {
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('4');
+            }
+
+            &:last-child {
+                margin-bottom: 40px;
+            }
+    }
+
+    &col--5 {
+        
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('5');
+            } 
+    }
+
+    &col--6 {
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('6');
+            }
+    }
+
+    &col--7 {
+         
+        margin-bottom: 40px;
+
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('7');
+            
+            margin-bottom: 40px;
+            
+            }
+    }
+
+
+    &col--8 {
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('8');
+
+            }
+    }
+
+    &col--9 {
+         
+    
+    }
+
+    &col--10 {
+        
+       
+    }
+
+    &col--11 {
+        
+        
+    }
+
+    &col--12 {
+
+        &.theme__colors {
+        @extend %grid;
+        background-color: color('12');
+        }
+    }
+}
+
+.centered {
+    margin: 0 auto;
+}
