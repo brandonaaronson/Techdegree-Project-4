@@ -1,10 +1,8 @@
 // Colors
 
+$emperor: #535353;
+$gray: #858585;
 $white: #fff;
-
-$color-text-primary: #858585;
-$grid-text-color: #535353;
-
 $viking: #58e1c1;           
 $malibu: #55defd;           
 $emerald: #63cc82;          
@@ -20,31 +18,52 @@ $sea-pink: #ec9fa3;
 $vivid-tangerine: #fd9f85;  
 $riptide: #80e8d1;          
 
-//  Theme colors
-$theme: (
-    'viking': $viking,          // default button
-    'malibu':$malibu,           // secondary color
-    'emerald': $emerald,        // success button
-    'sunglo': $sunglo,          // error button
-    'coral': $coral,            // warning button
-    'east side': $east-side,    // info button
+// Link color
+$link-color: $malibu;
 
+// Accent color
+$accent-color: $viking;
+
+// Font colors 
+
+$color-text-primary: $gray;
+$grid-text-color: $emperor;
+
+//  Button colors
+$theme-color:  (
+    'default': $malibu,          // default button
+    'success': $emerald,        // success button
+    'error': $sunglo,          // error button
+    'warning': $coral,            // warning button
+    'info': $east-side,    // info button
+    
 //  Grid colors
 
-    '3':$french-lilac,      // column 3
-    '4':$anakiwa,           // column 4
-    '5':$vista-blue,        // column 5
-    '6':$shakespeare,       // column 6
-    '7':$sea-pink,          // column 7
-    '8':$vivid-tangerine,   // column 8
-    '12':$riptide,          // column 12
+    'col--3':$french-lilac,      // column 3
+    'col--4':$anakiwa,           // column 4
+    'col--5':$vista-blue,        // column 5
+    'col--6':$shakespeare,       // column 6
+    'col--7':$sea-pink,          // column 7
+    'col--8':$vivid-tangerine,   // column 8
+    'col--12':$riptide,          // column 12
 );
+
+// Grid columns
+
+$grid--col__numbers: (
+                        '3',
+                        '4',
+                        '5',
+                        '6',
+                        '7',
+                        '8',
+                        '12');
 
 // Layout 
 
-$max-width: 1400px;
+$max-width: 1200px;
 $margin-start: 40px;
-$margin-end: 80px;
+$margin-end: 40px;
 
 // Border radius
 
@@ -68,18 +87,21 @@ $font-weight-bold: 800;
 $g-col-width   : 65px;
 $g-gutter-width: 20px;
 $g-col-count   : 12;
-$g-cont-max-w  : 1050px;
+$g-cont-max-w  : 1400px;
 
 
 
 // Breakpoints
 
-$break-s: 480px;
-$break-m: 768px;
+$break-sm: '(min-width: 1px)';
+$break-med: '(min-width: 768px)';
 
 
 $breakpoints: (
-'sm' : 480px,
-'med': 768px,
-'lg' : 1024x,
-)
+'sm' : 1px,
+'med': 769px
+);
+
+// Transition time
+
+$trans-time: .5s;

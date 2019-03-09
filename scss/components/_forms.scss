@@ -1,18 +1,28 @@
 .form {
-    @include center(100%);
+        @include flexy($dir: column);
+        @include center(100%);
+        margin-bottom: 20px;
 
-    &__input {
-        width: 96%;
-        border: none;
-        border-bottom: 6px solid color('viking');
-        padding: 15px;
-        height: 35px;
-        margin-left: 2%;
-        font-size: .8em;
-        font-weight: $font-weight-bold;
+        &__input {
+            @include center(90%);
+            border: none;
+            border-bottom: 6px solid $accent-color;
+            padding: 15px;
+            margin-top: 20px;
+            height: 35px;
+            font-size: .8em;
+            font-weight: $font-weight-bold;
+        }
+
+        &__label--hidden {
+            display: none;
+        }
+}
+
+.form [class^="btn"] {
+    width: 100%;
+
+    & [class^='img'] {
+        margin-top: 30px;
     }
 }
-.form__label--hidden {
-    visibility: hidden;
-}
-

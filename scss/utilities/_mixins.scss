@@ -1,14 +1,6 @@
 
 // Font Face
 
-
-
-
-
-@mixin button {
-    
-}
-
 @mixin center($w){
     width: $w;
     max-width: $max-width;
@@ -37,20 +29,28 @@
 
 @mixin mq($break) {
     $value: map-get($breakpoints, $break);
-    $lg: map-get($breakpoints, 'lg');
-    @if $value == $lg {
-        @media (min-width: $value) {
-            @content;
-        }
+  
+    @media (min-width: $value) {
+      @content;
     }
-    @else {
-        @media (min-width: $value) {
-            @content;
-        }
+  }
+
+// Adjacent sibling margins
+
+@mixin doubly($margin: 1em) {
+    & + & {
+      margin-left: $margin;
+      @content;
     }
 }
 
-
-
-
-
+@mixin theme-colors($theme-color) {
+	@each $theme, $color in $theme-color {
+		&--#{$theme} {
+			background-color: $color;
+		}
+		&__#{$theme} {
+			background-color: $color;
+		}
+	}
+}

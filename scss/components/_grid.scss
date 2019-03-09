@@ -1,120 +1,64 @@
-.grid__ {
 
-    &row {
-        @include center(100%);
-       
+.grid__row {
+    margin-top: 40px;
+    @include mq('med') {
+    @include flexy;
     }
-
-// Grid columns
+}
+// Grid Columns
 
 // Calculate grid columns
+@include mq('med') {
+    @for $i from 1 through $g-col-count {
 
-@for $i from 1 through $g-col-count {
+        $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+        $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
 
-    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
-    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+        //Generate column modifier classes
 
-    //Generate column modifier classes
-
-    .grd__col--#{$i} {
-        
-        width: percentage($target / $context);
-    }
-}
-    
-    &col--2 {
-         
-        
-    }
-
-    &col--3 {
-        
-        
-         
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('3');
-                &:last-child {
-                    margin-bottom: 40px;
-                }
-            }
-}
-
-    &col--4 {
-         
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('4');
-            }
-
-            &:last-child {
-                margin-bottom: 40px;
-            }
-    }
-
-    &col--5 {
-        
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('5');
-            } 
-    }
-
-    &col--6 {
-         
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('6');
-            }
-    }
-
-    &col--7 {
-         
-        margin-bottom: 40px;
-
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('7');
+        .grid__col--#{$i} {
+            width: percentage($target / $context);
             
-            margin-bottom: 40px;
-            
-            }
-    }
-
-
-    &col--8 {
-         
-        &.theme__colors {
-            @extend %grid;
-            background-color: color('8');
-
-            }
-    }
-
-    &col--9 {
-         
-    
-    }
-
-    &col--10 {
-        
-       
-    }
-
-    &col--11 {
-        
-        
-    }
-
-    &col--12 {
-
-        &.theme__colors {
-        @extend %grid;
-        background-color: color('12');
         }
     }
 }
 
+// Column styles
+
+[class*='grid__col--'] {
+    margin-top: 10px;
+    
+   
+   
+
+    @include mq('med') {
+        @include doubly(percentage($g-gutter-width / $context));
+        min-height: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}   
+
+// Grid theme colors
+
+.theme__colors.grid {
+    @include theme-colors($theme-color);
+    color: black;
+}
+
+[class^='grid__col--'] {
+    @extend %border-radius;
+    padding: 10px;
+
+    @include mq('med') {
+        text-align: center;
+    }
+}
+
 .centered {
-    margin: 0 auto;
+    margin: 0 auto $margin-end;
+
+    @include mq('med') {
+        margin-bottom: 80px;
+    }
 }

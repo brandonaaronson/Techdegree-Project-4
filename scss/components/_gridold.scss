@@ -1,0 +1,135 @@
+.grid__ {
+
+    &row {
+        @include center(100%);
+        margin-top: $margin-start;
+        margin-bottom: $margin-end;
+
+            @include mq('med') {
+                @include flexy($dir: row);
+                align-content: center;
+                        }
+
+          }
+       
+    
+
+// Grid columns
+
+// Calculate grid columns
+
+@for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    //Generate column modifier classes
+
+    .grd__col--#{$i} {
+        width: percentage($target / $context);
+    }
+}
+
+    &col--2 {
+
+    }
+
+    &col--3 {
+        
+        @include mq('med') {
+            @include flexy;
+            align-content: flex-start;
+        }
+        
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('3');
+                &:last-child {
+                    margin-bottom: 40px;
+                }
+            }
+    }
+
+    &col--4 {
+
+        padding: 10px;
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('4');
+            }
+
+            &:last-child {
+                margin-bottom: 40px;
+            }
+    }
+
+    &col--5 {
+        
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('5');
+            } 
+    }
+
+    &col--6 {
+        & img {
+            margin-bottom: 20px;
+        }
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('6');
+            }
+    }
+
+    &col--7 {
+         
+        margin-bottom: 40px;
+
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('7');
+            
+            margin-bottom: 40px;
+            
+            }
+    }
+
+
+    &col--8 {
+         
+        &.theme__colors {
+            @extend %grid;
+            background-color: color('8');
+
+            }
+    }
+
+    &col--9 {
+        
+    
+
+        @include mq('med') {
+            @include flexy;
+            flex: 4;
+        }
+        
+    }
+
+    &col--12 {
+
+        margin-top: $margin-start;
+        padding: 0 10px;
+        &.theme__colors {
+        @extend %grid;
+        background-color: color('12');
+        }
+    }    
+}
+
+
+.centered {
+    margin: 0 auto;
+}

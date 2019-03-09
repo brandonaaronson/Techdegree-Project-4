@@ -5,10 +5,3 @@
     @return $g-context;
 }
 
-// Sets the colors for buttons and columns
-
-@function color($color) {
-    @if map-has-key($theme, $color) {
-      @return map-get($theme, $color);
-    }
-}

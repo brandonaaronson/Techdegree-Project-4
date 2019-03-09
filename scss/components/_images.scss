@@ -3,21 +3,32 @@
         display: block;
         margin: 0 auto;
         max-width: 162px;
-        padding-top: 40px;
+        padding-top: 45px;
+        
+        @include mq('med') {
+            padding: 17px 0 0 20px;
+        }
     }
 
     &frame {
         @include center(100%);
+        max-height: 199px;
+        max-width: 385px;
         display: block;
-        border: 1px solid $color-text-primary;
-        padding: 15px;
+        border: 1px solid lighten($color-text-primary, 30%);
+        padding: 10px;
+        
+
+        @include mq('med') {
+            margin-left: 30px;
+            margin-bottom: $margin-end;
+        }
     }
 
     &avatar {
         @include center(90%);
         display:block;
+        max-height: 199px;
         max-width: 199px;
-        margin-top: $margin-start;
-        padding: 0;
     }
 }

@@ -1,30 +1,15 @@
-.btn-- {
-    
-    &default {
-        @extend %button;
-        background-color: color('malibu');
-        margin-top: 20px;       
-        
-    }
-        
-    &success {
-        @extend %button;
-        background-color: color('emerald');
-    }
-
-    &error {
-        @extend %button;
-        background-color: color('sunglo');
-    }
-
-    &warning {
-        @extend %button;
-        background-color: color('coral');
-    }
-
-    &info {
-        @extend %button;
-        background-color: color('east side');
-    }
+.btn {
+    @include theme-colors($theme-color);
 }
-// .theme__colors {}
+
+[class^="btn--"] {
+    @extend %button;
+    @extend %text-center;
+
+
+    @include mq(med) {
+        @include doubly(40px);
+        display: inline-block;
+        width: auto;
+    }
+} 

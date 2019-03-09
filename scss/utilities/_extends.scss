@@ -2,23 +2,38 @@
     border-radius: $br;
 }
 
+%grid {
+    @extend %border-radius;
+    color: $grid-text-color;
+    margin-top: 10px;
+    height: 40px;
+    padding-left: 10px;
+}
+
 %button {
     @extend %border-radius;
     display: block;
     border: none;
     text-transform: uppercase;
-    width: 90%;
     height: 40px;
-    color: #fff;
-    margin: 10px auto 0;
+    color: $white;
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px 50px;
+    &:hover {
+        opacity: .7;
+        transition-duration: $trans-time;
     }
+}
 
-%grid {
-    @extend %border-radius;
-    width: 100%;
-    color: $grid-text-color;
-    margin-top: 10px;
-    height: 40px;
-    line-height: 40px;
-    padding-left: 10px;
+%clearfix {
+&:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+}    
+
+%text-center {
+    text-align: center;
 }
